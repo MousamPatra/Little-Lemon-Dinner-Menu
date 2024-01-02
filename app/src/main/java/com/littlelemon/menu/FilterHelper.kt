@@ -4,10 +4,12 @@ class FilterHelper {//TODO create a FilterHelperTest and write a unit test for f
 
     fun filterProducts(type: FilterType, productsList: List<ProductItem>): List<ProductItem> {
         return when (type) {
+
+            //Filter based on the type of item
             FilterType.All -> productsList
-            FilterType.Dessert -> TODO("only products with category equal to Dessert")
-            FilterType.Drinks -> TODO("only products with category equal to Drinks")
-            FilterType.Food -> TODO("only products with category equal to Food")
+            FilterType.Dessert -> productsList.filter { it.category == "Dessert" }
+            FilterType.Drinks -> productsList.filter { it.category == "Drinks" }
+            FilterType.Food -> productsList.filter { it.category == "Food" }
         }
     }
 
