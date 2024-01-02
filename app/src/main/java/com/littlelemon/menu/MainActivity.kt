@@ -52,6 +52,12 @@ class MainActivity : ComponentActivity() {
         // Create an Intent to start the ProductActivity
         val intent = Intent(baseContext, ProductActivity::class.java)
 
+        // Pass product details as extra properties to the intent
+        intent.putExtra(ProductActivity.KEY_TITLE, productItem.title)
+        intent.putExtra(ProductActivity.KEY_PRICE, productItem.price)
+        intent.putExtra(ProductActivity.KEY_IMAGE, productItem.image)
+        intent.putExtra(ProductActivity.KEY_CATEGORY, productItem.category)
+
         // Start the ProductActivity with the created intent
         startActivity(intent)
     }
