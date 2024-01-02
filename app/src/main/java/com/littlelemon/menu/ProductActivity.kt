@@ -8,8 +8,15 @@ class ProductActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Get the product details as extra properties from the intent
+        val title = intent.getStringExtra(KEY_TITLE)
+        val price = intent.getDoubleExtra(KEY_PRICE, 0.0)
+        val category = intent.getStringExtra(KEY_CATEGORY)
+        val image = intent.getIntExtra(KEY_IMAGE, 0)
+
         val productItem =
-            ProductItem("", 0.0, "", -1)//todo replace with the passed values from intent
+            ProductItem(title.toString(), price, category.toString(), image)
         setContent { ProductDetails(productItem) }
     }
 
