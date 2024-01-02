@@ -48,7 +48,12 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun startProductActivity(productItem: ProductItem) {
-        //TODO instantiate intent and pass extra parameter from product
+
+        // Create an Intent to start the ProductActivity
+        val intent = Intent(baseContext, ProductActivity::class.java)
+
+        // Start the ProductActivity with the created intent
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
