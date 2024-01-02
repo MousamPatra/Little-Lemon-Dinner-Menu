@@ -1,7 +1,7 @@
 package com.littlelemon.menu
 
 object ProductsWarehouse {
-    val productsList = mutableListOf(
+    private val productsList = mutableListOf(
         ProductItem("Black tea", 3.00, "Drinks", R.drawable.black_tea),
         ProductItem("Green tea", 3.00, "Drinks", R.drawable.green_tea),
         ProductItem("Espresso", 5.00, "Drinks", R.drawable.espresso),
@@ -17,4 +17,7 @@ object ProductsWarehouse {
         ProductItem("Custard tart", 14.00, "Dessert", R.drawable.custard_tart),
         ProductItem("Croissant", 7.00, "Dessert", R.drawable.croissant),
     )
+    public fun getProductsList(): MutableList<ProductItem>{
+        return productsList
+    }
 }
